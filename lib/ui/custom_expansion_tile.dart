@@ -13,12 +13,26 @@ class CustomExpansionTile extends StatefulWidget {
       this.onSubItemChanged,
       this.isGettingSubItems = false});
 
+  /// Parent title
   final String? title;
+
+  /// Called if the parent tile is expanded
   final VoidCallback? onParentTileExpanded;
+
+  /// List of expansions item and it's subItems.
   final List<ExpansionItem> items;
+
+  /// Returns current selected item
   final ValueChanged<ExpansionItem>? onItemChanged;
+
+  /// Displays a loader to indicate a loading state for items
   final bool isGettingItems;
+
+  /// Returns current selected subItem
   final ValueChanged<ExpansionSubItem>? onSubItemChanged;
+
+  /// Displays a loader to indicate a loading state for subItems
+  /// This is displayed in case the selected item needs to change it's set of sub items
   final bool isGettingSubItems;
 
   @override
