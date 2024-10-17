@@ -1,18 +1,4 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+# expansion_tile_single_list
 
 ## Features
 
@@ -20,18 +6,21 @@ The package displays one ExpansionPanelList at a time in a list of ExpansionPane
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+To use this package, add it as a Git dependency in your project
+```yaml 
+dependencies:
+  expansion_tile_single_list:
+    git:
+      url: https://github.com/EbhomenyeEmmanuel/expansion_tile_single_list.git
+```
 
 ## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
 
 ```dart 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
 
+//Create a list of ExpansionItem objects
   List<ExpansionItem> get items =>
       [
         const ExpansionItem(
@@ -68,9 +57,12 @@ class MyHomePage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
+              const Text('Default Behaviour'),
+              DefaultExpansionTile(items: items),
               const SizedBox(
                 height: 14,
               ),
+              const Text('Workaround'),
               CustomExpansionTile(items: items),
               const SizedBox(
                 height: 14,
@@ -78,14 +70,15 @@ class MyHomePage extends StatelessWidget {
             ],
           ),
         ),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }
 ```
 
+https://github.com/user-attachments/assets/96bf60a5-8ac3-49d4-b903-4a2fc4a983cc
+
+
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+Contributions and suggestions are highly welcome.
