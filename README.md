@@ -16,7 +16,7 @@ know whether this package might be useful for them.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+The package displays one ExpansionPanelList at a time in a list of ExpansionPanels.
 
 ## Getting started
 
@@ -28,8 +28,60 @@ start using the package.
 TODO: Include short and useful examples for package users. Add longer examples
 to `/example` folder.
 
-```dart
-const like = 'sample';
+```dart 
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+
+  List<ExpansionItem> get items =>
+      [
+        const ExpansionItem(
+          name: 'Africa',
+          subItems: [
+            ExpansionSubItem('Nigeria'),
+            ExpansionSubItem('Kenya'),
+            ExpansionSubItem('Algeria'),
+          ],
+        ),
+        const ExpansionItem(
+          name: 'Europe',
+          subItems: [
+            ExpansionSubItem('Germany'),
+            ExpansionSubItem('France'),
+            ExpansionSubItem('Spain'),
+          ],
+        ),
+      ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme
+            .of(context)
+            .colorScheme
+            .inversePrimary,
+        title: const Text('Expansion Tile Example'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16.0),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              const SizedBox(
+                height: 14,
+              ),
+              CustomExpansionTile(items: items),
+              const SizedBox(
+                height: 14,
+              ),
+            ],
+          ),
+        ),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
 ```
 
 ## Additional information
